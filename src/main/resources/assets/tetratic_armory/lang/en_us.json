@@ -1,0 +1,23 @@
+{
+  "tetra.slot.helmet/skull": "Skull",
+  "tetra.slot.helmet/lining": "Lining",
+  "tetra.slot.helmet/headpiece": "Headpiece",
+  "tetra.slot.helmet/face": "Face",
+  "tetra.slot.helmet/gorget": "Gorget",
+  "tetra/schematic/helmet/basic_skull.name": "Simple skull",
+  "tetra/schematic/helmet/basic_skull.description": "Replaces the current skull with a new one crafted from the provided material.",
+  "tetra/schematic/helmet/basic_skull.slot1": "Skull material",
+  "tetra.module.helmet/basic_skull.name": "Simple skull",
+  "tetra.module.helmet/basic_skull.description": "A simple helmet skull. The helmet skull is the primary source of integrity for helmets.",
+  "tetra.module.helmet/basic_skull.material_name": "%s skull",
+  "tetra/schematic/helmet/heavy_skull.name": "Heavy skull",
+  "tetra.module.helmet/basic_skull.item_name":"Helmet",
+  "tetra.module.helmet/basic_skull.prefix":"%s",
+  "tetra/schematic/helmet/heavy_skull.description": "Replaces the current skull with a new one crafted from the provided material.",
+  "tetra/schematic/helmet/heavy_skull.slot1": "Skull material",
+  "tetra.module.helmet/heavy_skull.name": "Heavy skull",
+  "tetra.module.helmet/heavy_skull.description": "A heavy helmet skull providing knockback resistance. The helmet skull is the primary source of integrity for helmets.",
+  "tetra.module.helmet/heavy_skull.material_name": "Heavy %s skull",
+  "tetra.module.helmet/heavy_skull.item_name":"Heavy Helmet",
+  "tetra.module.helmet/heavy_skull.prefix":"%s"
+}

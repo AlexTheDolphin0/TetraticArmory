@@ -1,0 +1,35 @@
+{
+  "replace": true,
+  "slots": [
+    "helmet/skull"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "translation": {
+    "primaryAttributes": {
+      "generic.armor": 3
+    },
+    "durability": 4,
+    "integrity": 1,
+    "magicCapacity": 3
+  },
+  "glyph": {
+    "textureX": 16,
+    "textureY": 0,
+    "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
+    "tint": "ffffff"
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:skin/",
+        "tetra:scale/",
+        "tetra:metal/",
+        "tetra:gem/"
+      ],
+      "countFactor": 7,
+      "moduleKey": "helmet/heavy_skull",
+      "moduleVariant": "heavy_skull/"
+    }
+  ]
+}
