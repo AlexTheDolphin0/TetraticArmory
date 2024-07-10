@@ -23,8 +23,10 @@ import se.mickelus.tetra.properties.AttributeHelper;
 
 public abstract class ItemModularArmor extends ModularItem implements Equipable, IClientItemExtensions {
 
-    public ItemModularArmor(Properties properties) {
+    public final ArmorItem.Type type;
+    public ItemModularArmor(Properties properties, ArmorItem.Type type) {
         super(properties);
+        this.type = type;
         DispenserBlock.registerBehavior(this, DISPENSE_ITEM_BEHAVIOR);
     }
 
@@ -50,4 +52,7 @@ public abstract class ItemModularArmor extends ModularItem implements Equipable,
         return this.getMaxDamage(stack) > 0;
     }
 
+    public EquipmentSlot getEquipmentSlot() {
+        return this.type.getSlot();
+    }
 }

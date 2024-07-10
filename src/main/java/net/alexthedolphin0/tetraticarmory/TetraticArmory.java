@@ -5,6 +5,7 @@ import net.alexthedolphin0.tetraticarmory.modular.ModularBootsItem;
 import net.alexthedolphin0.tetraticarmory.modular.ModularChestplateItem;
 import net.alexthedolphin0.tetraticarmory.modular.ModularHelmetItem;
 import net.alexthedolphin0.tetraticarmory.modular.ModularLeggingsItem;
+import net.minecraft.client.model.Model;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -69,6 +70,7 @@ public class TetraticArmory {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

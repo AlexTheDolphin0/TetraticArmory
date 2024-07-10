@@ -1,6 +1,7 @@
 package net.alexthedolphin0.tetraticarmory.modular;
 
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ObjectHolder;
@@ -27,7 +28,7 @@ public class ModularHelmetItem extends ItemModularArmor {
     )
     public static ItemModularArmor instance;
     public ModularHelmetItem() {
-        super((new Item.Properties()).stacksTo(1).fireResistant());
+        super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.HELMET);
         this.majorModuleKeys = new String[]{"helmet/skull", "helmet/lining"};
         this.minorModuleKeys = new String[]{"helmet/headpiece", "helmet/face", "helmet/gorget"};
         this.requiredModules = new String[]{"helmet/skull"};

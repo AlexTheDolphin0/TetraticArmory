@@ -2,13 +2,11 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.alexthedolphin0.tetraticarmory.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "refmap": "TetraticArmory.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "tetratic_armory.refmap.json",
   "mixins": [
   ],
   "client": [
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+    "HumanoidArmorLayerMixin"
+  ]
 }
