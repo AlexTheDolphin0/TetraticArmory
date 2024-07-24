@@ -6,6 +6,7 @@ import net.alexthedolphin0.tetraticarmory.modular.ModularChestplateItem;
 import net.alexthedolphin0.tetraticarmory.modular.ModularHelmetItem;
 import net.alexthedolphin0.tetraticarmory.modular.ModularLeggingsItem;
 import net.minecraft.client.model.Model;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;

@@ -44,7 +44,6 @@ import java.util.HexFormat;
 
 @Mixin(HumanoidArmorLayer.class)
 public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends HumanoidModel<T>, A extends HumanoidModel<T>> extends RenderLayer<T, M> {
-    @Shadow @Final private A innerModel;
     public HumanoidArmorLayerMixin(RenderLayerParent<T, M> p_117346_) {
         super(p_117346_);
     }
