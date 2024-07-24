@@ -38,7 +38,7 @@ public class ModularBootsItem extends ItemModularArmor {
     public static ItemModularArmor instance;
     public ModularBootsItem() {
         super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.BOOTS);
-        this.majorModuleKeys = new String[]{"boots/boot_left", "boots/boot_right", "boots/lining"};
+        this.majorModuleKeys = new String[]{"boots/boot_left", "boots/boot_right", "boots/lining_left", "boots/lining_right"};
         this.minorModuleKeys = new String[]{"boots/sole_left", "boots/sole_right"};
         this.requiredModules = new String[]{"boots/boot_left", "boots/boot_right"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_boots"));
