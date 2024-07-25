@@ -24,6 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.armortrim.ArmorTrim;
 import org.jline.utils.Colors;
 import org.openjdk.nashorn.internal.parser.JSONParser;
 import org.spongepowered.asm.mixin.Final;
@@ -44,11 +45,13 @@ import java.util.HexFormat;
 
 @Mixin(HumanoidArmorLayer.class)
 public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends HumanoidModel<T>, A extends HumanoidModel<T>> extends RenderLayer<T, M> {
+    @Shadow public abstract void renderGlint(PoseStack p_289673_, MultiBufferSource p_289654_, int p_289649_, A p_289659_);
+
     public HumanoidArmorLayerMixin(RenderLayerParent<T, M> p_117346_) {
         super(p_117346_);
     }
     HumanoidArmorLayer thisnt = ((HumanoidArmorLayer)(Object)this);
-    @Inject(method = "renderArmorPiece", at = @At("HEAD"))
+    @Inject(method = "renderArmorPiece", at = @At("HEAD"), cancellable = true)
     private void iCanLiterallyNameThisMethodAnythingLMAO(PoseStack p_117119_, MultiBufferSource p_117120_, T p_117121_, EquipmentSlot p_117122_, int p_117123_, A p_117124_, CallbackInfo ci) {
         if (p_117121_.getItemBySlot(p_117122_).getItem() instanceof ItemModularArmor armoritem) {
             ItemStack itemstack = p_117121_.getItemBySlot(p_117122_);
@@ -58,10 +61,14 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
                 net.minecraft.client.model.Model model = net.minecraftforge.client.ForgeHooksClient.getArmorModel(p_117121_, itemstack, p_117122_, p_117124_);
                 boolean flag = thisnt.usesInnerModel(p_117122_);
                 renderModel(p_117119_, p_117120_, p_117123_, itemstack, model, flag);
-                /*if (itemstack.hasFoil()) {
-                    thisnt.renderGlint(p_117119_, p_117120_, p_117123_, (A)model);
-                }*/
+                ArmorTrim.getTrim(p_117121_.level().registryAccess(), itemstack).ifPresent((p_289638_) -> {
+                    thisnt.renderTrim(armoritem.getMaterial(), p_117119_, p_117120_, p_117123_, p_289638_, model, flag);
+                });
+                if (itemstack.hasFoil()) {
+                    thisnt.renderGlint(p_117119_, p_117120_, p_117123_, model);
+                }
             }
+            ci.cancel();
         }
     }
     public void renderModel(PoseStack poseStack, MultiBufferSource buffer, int i, ItemStack stack, Model model, boolean bool) {
