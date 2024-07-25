@@ -15,7 +15,7 @@
   },
   "glyph": {
     "textureX": 0,
-    "textureY": 0,
+    "textureY": 16,
     "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
     "tint": "ffffff"
   },
