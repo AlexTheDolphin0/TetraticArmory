@@ -31,7 +31,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
 @ParametersAreNonnullByDefault
-public class ModularHelmetItem extends ItemModularArmor implements IClientItemExtensions {
+public class ModularHelmetItem extends ItemModularArmor {
     public static final String skullKey = "helmet/skull";
     public static final String liningKey = "helmet/lining";
     public static final String headpieceKey = "helmet/headpiece";
@@ -45,7 +45,7 @@ public class ModularHelmetItem extends ItemModularArmor implements IClientItemEx
     public static ItemModularArmor instance;
     public ModularHelmetItem() {
         super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.HELMET);
-        this.majorModuleKeys = new String[]{"helmet/skull", "helmet/lining"};
+        this.majorModuleKeys = new String[]{"helmet/skull"};
         this.minorModuleKeys = new String[]{"helmet/headpiece", "helmet/face", "helmet/gorget"};
         this.requiredModules = new String[]{"helmet/skull"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_helmet"));
@@ -65,10 +65,9 @@ public class ModularHelmetItem extends ItemModularArmor implements IClientItemEx
         this.honeBase = honeBase;
         this.honeIntegrityMultiplier = honeIntegrityMultiplier;
     }
-    public static ItemStack createItemStack(String skull, String skullMaterial, String lining, String liningMaterial) {
+    public static ItemStack createItemStack(String skull, String skullMaterial) {
         ItemStack itemStack = new ItemStack(instance);
         IModularItem.putModuleInSlot(itemStack, "helmet/skull", "helmet/" + skull, "helmet/" + skull + "_material", skull + "/" + skullMaterial);
-        IModularItem.putModuleInSlot(itemStack, "helmet/lining", "helmet/" + lining, "helmet/" + lining + "_material", lining + "/" + liningMaterial);
         IModularItem.updateIdentifier(itemStack);
         return itemStack;
     }

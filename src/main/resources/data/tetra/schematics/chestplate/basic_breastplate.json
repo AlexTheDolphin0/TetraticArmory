@@ -1,0 +1,35 @@
+{
+  "replace": true,
+  "slots": [
+    "chestplate/breastplate"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "translation": {
+    "primaryAttributes": {
+      "generic.armor": 6
+    },
+    "durability": 6,
+    "integrity": 1,
+    "magicCapacity": 3
+  },
+  "glyph": {
+    "textureX": 0,
+    "textureY": 0,
+    "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
+    "tint": "ffffff"
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:skin/",
+        "tetra:scale/",
+        "tetra:metal/",
+        "tetra:gem/"
+      ],
+      "countFactor": 6,
+      "moduleKey": "chestplate/basic_breastplate",
+      "moduleVariant": "basic_breastplate/"
+    }
+  ]
+}

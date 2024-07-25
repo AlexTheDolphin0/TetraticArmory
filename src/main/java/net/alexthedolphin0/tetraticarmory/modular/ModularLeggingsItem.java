@@ -39,8 +39,8 @@ public class ModularLeggingsItem extends ItemModularArmor {
     public static ItemModularArmor instance;
     public ModularLeggingsItem() {
         super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.LEGGINGS);
-        this.majorModuleKeys = new String[]{"leggings/tasset", "leggings/leg_left", "leggings/leg_right", "leggings/lining"};
-        this.minorModuleKeys = new String[]{"leggings/knee_left", "leggings/knee_right"};
+        this.majorModuleKeys = new String[]{"leggings/leg_left", "leggings/leg_right"};
+        this.minorModuleKeys = new String[]{"leggings/knee_left", "leggings/knee_right", "leggings/tasset"};
         this.requiredModules = new String[]{"leggings/tasset"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_leggings"));
         RemoveSchematic.registerRemoveSchematics(this, "modular_leggings");
@@ -59,12 +59,11 @@ public class ModularLeggingsItem extends ItemModularArmor {
         this.honeBase = honeBase;
         this.honeIntegrityMultiplier = honeIntegrityMultiplier;
     }
-    public static ItemStack createItemStack(String tasset, String tassetMaterial, String cuiseLeft, String cuiseLeftMaterial, String cuiseRight, String cuiseRightMaterial, String lining, String liningMaterial) {
+    public static ItemStack createItemStack(String tasset, String tassetMaterial, String legLeft, String legLeftMaterial, String legRight, String legRightMaterial) {
         ItemStack itemStack = new ItemStack(instance);
         IModularItem.putModuleInSlot(itemStack, "leggings/tasset", "leggings/" + tasset, "leggings/" + tasset + "_material", tasset + "/" + tassetMaterial);
-        IModularItem.putModuleInSlot(itemStack, "leggings/cuise_left", "leggings/" + cuiseLeft, "leggings/" + cuiseLeft + "_material", cuiseLeft + "/" + cuiseLeftMaterial);
-        IModularItem.putModuleInSlot(itemStack, "leggings/cuise_right", "leggings/" + cuiseRight, "leggings/" + cuiseRight + "_material", cuiseRight + "/" + cuiseRightMaterial);
-        IModularItem.putModuleInSlot(itemStack, "leggings/lining", "leggings/" + lining, "leggings/" + lining + "_material", lining + "/" + liningMaterial);
+        IModularItem.putModuleInSlot(itemStack, "leggings/leg_left", "leggings/" + legLeft, "leggings/" + legLeft + "_material", legLeft + "/" + legLeftMaterial);
+        IModularItem.putModuleInSlot(itemStack, "leggings/leg_right", "leggings/" + legRight, "leggings/" + legRight + "_material", legRight + "/" + legRightMaterial);
         IModularItem.updateIdentifier(itemStack);
         return itemStack;
     }

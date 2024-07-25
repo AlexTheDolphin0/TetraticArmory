@@ -39,7 +39,7 @@ public class ModularChestplateItem extends ItemModularArmor {
     public static ItemModularArmor instance;
     public ModularChestplateItem() {
         super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.CHESTPLATE);
-        this.majorModuleKeys = new String[]{"chestplate/breastplate", "chestplate/plackart", "chestplate/lining"};
+        this.majorModuleKeys = new String[]{"chestplate/breastplate", "chestplate/plackart"};
         this.minorModuleKeys = new String[]{"chestplate/arm_left", "chestplate/arm_right","chestplate/back"};
         this.requiredModules = new String[]{"chestplate/breastplate"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_chestplate"));
@@ -59,11 +59,10 @@ public class ModularChestplateItem extends ItemModularArmor {
         this.honeBase = honeBase;
         this.honeIntegrityMultiplier = honeIntegrityMultiplier;
     }
-    public static ItemStack createItemStack(String breastplate, String breastplateMaterial, String plackart, String plackartMaterial, String lining, String liningMaterial) {
+    public static ItemStack createItemStack(String breastplate, String breastplateMaterial, String plackart, String plackartMaterial) {
         ItemStack itemStack = new ItemStack(instance);
         IModularItem.putModuleInSlot(itemStack, "chestplate/breastplate", "chestplate/" + breastplate, "chestplate/" + breastplate + "_material", breastplate + "chestplate/" + breastplateMaterial);
         IModularItem.putModuleInSlot(itemStack, "chestplate/plackart", "chestplate/" + plackart, "chestplate/" + plackart + "_material", plackart + "chestplate/" + plackartMaterial);
-        IModularItem.putModuleInSlot(itemStack, "chestplate/lining", "chestplate/" + lining, "chestplate/" + lining + "_material", lining + "chestplate/" + liningMaterial);
         IModularItem.updateIdentifier(itemStack);
         return itemStack;
     }

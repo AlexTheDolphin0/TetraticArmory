@@ -38,7 +38,7 @@ public class ModularBootsItem extends ItemModularArmor {
     public static ItemModularArmor instance;
     public ModularBootsItem() {
         super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.BOOTS);
-        this.majorModuleKeys = new String[]{"boots/boot_left", "boots/boot_right", "boots/lining_left", "boots/lining_right"};
+        this.majorModuleKeys = new String[]{"boots/boot_left", "boots/boot_right"};
         this.minorModuleKeys = new String[]{"boots/sole_left", "boots/sole_right"};
         this.requiredModules = new String[]{"boots/boot_left", "boots/boot_right"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_boots"));
@@ -58,11 +58,10 @@ public class ModularBootsItem extends ItemModularArmor {
         this.honeBase = honeBase;
         this.honeIntegrityMultiplier = honeIntegrityMultiplier;
     }
-    public static ItemStack createItemStack(String bootLeft, String bootLeftMaterial, String bootRight, String bootRightMaterial, String lining, String liningMaterial) {
+    public static ItemStack createItemStack(String bootLeft, String bootLeftMaterial, String bootRight, String bootRightMaterial) {
         ItemStack itemStack = new ItemStack(instance);
         IModularItem.putModuleInSlot(itemStack, "boots/boot_left", "boots/" + bootLeft, "boots/" + bootLeft + "_material", bootLeft + "/" + bootLeftMaterial);
         IModularItem.putModuleInSlot(itemStack, "boots/boot_right", "boots/" + bootRight, "boots/" + bootRight + "_material", bootRight + "/" + bootRightMaterial);
-        IModularItem.putModuleInSlot(itemStack, "boots/lining", "boots/" + lining, "boots/" + lining + "_material", lining + "/" + liningMaterial);
         IModularItem.updateIdentifier(itemStack);
         return itemStack;
     }

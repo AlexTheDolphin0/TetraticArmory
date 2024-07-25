@@ -1,0 +1,56 @@
+{
+  "replace": true,
+  "slots": [
+    "chestplate/breastplate"
+  ],
+  "type": "tetra:basic_major_module",
+  "renderLayer": "BASE",
+  "improvements": [
+    "tetra:chestplate/basic_breastplate/",
+    "tetra:chestplate/shared_breastplate/",
+    "tetra:chestplate/shared/",
+    "tetra:shared/"
+  ],
+  "variants": [
+    {
+      "materials": [
+        "tetra:metal/",
+        "tetra:gem/",
+        "tetra:scale/"
+      ],
+      "key": "basic_breastplate/",
+      "tags": [
+        "forge:chestplates"
+      ],
+      "attributes": {
+        "generic.armor": 1.2
+      },
+      "extract": {
+        "primaryAttributes": {
+          "generic.armor": 0.25
+        },
+        "generic.armor": 4,
+        "durability": 0.67,
+        "integrity": 1,
+        "magicCapacity": 1,
+        "glyph": {
+          "textureX": 0,
+          "textureY": 0,
+          "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
+          "tint": "ffffff"
+        },
+        "availableTextures": [
+          "metal",
+          "shiny",
+          "grainy",
+          "scaly"
+        ],
+        "models": [
+          {
+            "location": "tetratic_armory:item/module/chestplate/breastplate/basic/"
+          }
+        ]
+      }
+    }
+  ]
+}

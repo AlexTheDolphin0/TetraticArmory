@@ -48,7 +48,7 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 
-public abstract class ItemModularArmor extends ArmorItem implements Equipable, IClientItemExtensions, IModularItem, IToolProvider {
+public abstract class ItemModularArmor extends ArmorItem implements IClientItemExtensions, IModularItem, IToolProvider {
 
     public final ArmorItem.Type type;
     private static final Logger logger;
