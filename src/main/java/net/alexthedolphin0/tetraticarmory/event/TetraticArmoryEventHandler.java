@@ -24,7 +24,6 @@ public class TetraticArmoryEventHandler {
             a.forEach(stack -> {
                 if (stack.getItem() instanceof ItemModularArmor) {
                     ((ItemModularArmor)(stack.getItem())).tickHoningProgression(event.getEntity(), stack, 1);
-                    System.out.println("FUCKER");
                 }
             });
         }

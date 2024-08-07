@@ -48,9 +48,9 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
                 /*ArmorTrim.getTrim(p_117121_.level().registryAccess(), itemstack).ifPresent((p_289638_) -> {
                     thisnt.renderTrim(armoritem.getMaterial(), p_117119_, p_117120_, p_117123_, p_289638_, model, flag);
                 });*/
-                /*if (itemstack.hasFoil()) {
-                    thisnt.renderGlint(p_117119_, p_117120_, p_117123_, model);
-                }*/
+                if (itemstack.hasFoil()) {
+                    model.renderToBuffer(p_117119_, p_117120_.getBuffer(RenderType.armorEntityGlint()), p_117123_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+                }
             }
             ci.cancel();
         }
@@ -63,7 +63,6 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
         for (ModuleModel moduleModel : modelArray) {
             float[] tintRgb = tetraticArmory$rgb(moduleModel.tint);
             renderModel(poseStack, buffer, i, model, bool, tintRgb[0], tintRgb[1], tintRgb[2], 1.0F, moduleModel.location.withSuffix(".png").withPrefix("textures/model/"));
-            model.renderToBuffer(poseStack, buffer.getBuffer(RenderType.armorEntityGlint()), i, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         }
     }
     public void renderModel(PoseStack p_289664_, MultiBufferSource p_289689_, int p_289681_, Model p_289658_, boolean p_289668_, float red, float green, float blue, float alpha, ResourceLocation armorResource) {
