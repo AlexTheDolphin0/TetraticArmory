@@ -41,7 +41,6 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
             ItemStack itemstack = p_117121_.getItemBySlot(p_117122_);
             if (armoritem.getEquipmentSlot() == p_117122_) {
                 this.getParentModel().copyPropertiesTo(p_117124_);
-                thisnt.setPartVisibility(p_117124_, p_117122_);
                 net.minecraft.client.model.Model model = net.minecraftforge.client.ForgeHooksClient.getArmorModel(p_117121_, itemstack, p_117122_, p_117124_);
                 boolean flag = thisnt.usesInnerModel(p_117122_);
                 renderModel(p_117119_, p_117120_, p_117123_, itemstack, model, flag);
