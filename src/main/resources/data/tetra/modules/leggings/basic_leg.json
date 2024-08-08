@@ -1,27 +1,32 @@
 {
   "replace": true,
+  "type": "tetra:multi_major_module",
   "slots": [
-    "helmet/skull"
+    "leggings/leg_left",
+    "leggings/leg_right"
   ],
-  "type": "tetra:basic_major_module",
-  "renderLayer": "LOWER",
+  "slotSuffixes": [
+    "_left",
+    "_right"
+  ],
+  "renderLayer": "BASE",
   "improvements": [
-    "tetra:helmet/basic_skull/",
-    "tetra:helmet/shared_skull/",
-    "tetra:helmet/shared/",
+    "tetra:leggings/basic_leg/",
+    "tetra:leggings/shared_leg/",
+    "tetra:leggings/shared/",
     "tetra:shared/"
   ],
   "variants": [
     {
       "materials": [
         "tetra:skin/",
+        "tetra:scale/",
         "tetra:metal/",
-        "tetra:gem/",
-        "tetra:scale/"
+        "tetra:gem/"
       ],
-      "key": "basic_skull/",
+      "key": "basic_leg/",
       "tags": [
-        "forge:helmets"
+        "forge:leggings"
       ],
       "attributes": {
         "generic.armor": 1.2
@@ -30,12 +35,12 @@
         "primaryAttributes": {
           "generic.armor": 0.25
         },
-        "generic.armor": 1.2,
+        "generic.armor": 4,
         "durability": 0.67,
         "integrity": 1,
         "magicCapacity": 1,
         "glyph": {
-          "textureX": 0,
+          "textureX": 32,
           "textureY": 0,
           "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
           "tint": "ffffff"
@@ -48,7 +53,7 @@
         ],
         "models": [
           {
-            "location": "tetratic_armory:item/module/helmet/skull/basic/"
+            "location": "tetratic_armory:item/module/leggings/leg/basic/"
           }
         ]
       }

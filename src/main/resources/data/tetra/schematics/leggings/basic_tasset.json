@@ -1,0 +1,35 @@
+{
+  "replace": true,
+  "slots": [
+    "leggings/tasset"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "minor",
+  "translation": {
+    "primaryAttributes": {
+      "generic.armor": 6
+    },
+    "durability": 6,
+    "integrity": 1,
+    "magicCapacity": 3
+  },
+  "glyph": {
+    "textureX": 0,
+    "textureY": 16,
+    "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
+    "tint": "ffffff"
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:skin/",
+        "tetra:scale/",
+        "tetra:metal/",
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "leggings/basic_tasset",
+      "moduleVariant": "basic_tasset/"
+    }
+  ]
+}

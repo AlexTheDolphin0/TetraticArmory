@@ -12,6 +12,7 @@
   "variants": [
     {
       "materials": [
+        "tetra:skin/",
         "tetra:metal/",
         "tetra:gem/",
         "tetra:scale/"
