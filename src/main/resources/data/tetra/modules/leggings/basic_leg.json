@@ -53,7 +53,7 @@
         ],
         "models": [
           {
-            "location": "tetratic_armory:item/module/leggings/leg/basic/"
+            "location": "tetra:item/module/leggings/leg/basic/"
           }
         ]
       }

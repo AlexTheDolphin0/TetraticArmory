@@ -34,7 +34,7 @@ public class ModularArmorMaterial implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return "modular_armor_material";
+        return "modular";
     }
 
     @Override

@@ -48,7 +48,7 @@
         ],
         "models": [
           {
-            "location": "tetratic_armory:item/module/chestplate/breastplate/basic/"
+            "location": "tetra:item/module/chestplate/breastplate/basic/"
           }
         ]
       }

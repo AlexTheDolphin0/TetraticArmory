@@ -46,7 +46,7 @@
         ],
         "models": [
           {
-            "location": "tetratic_armory:item/module/leggings/tasset/basic/"
+            "location": "tetra:item/module/leggings/tasset/basic/"
           }
         ]
       }

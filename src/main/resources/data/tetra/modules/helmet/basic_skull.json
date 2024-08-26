@@ -48,7 +48,7 @@
         ],
         "models": [
           {
-            "location": "tetratic_armory:item/module/helmet/skull/basic/"
+            "location": "tetra:item/module/helmet/skull/basic/"
           }
         ]
       }

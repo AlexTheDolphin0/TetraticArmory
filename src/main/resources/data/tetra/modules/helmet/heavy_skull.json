@@ -50,7 +50,7 @@
         ],
         "models": [
           {
-            "location": "tetratic_armory:item/module/helmet/skull/heavy/"
+            "location": "tetra:item/module/helmet/skull/heavy/"
           }
         ]
       }

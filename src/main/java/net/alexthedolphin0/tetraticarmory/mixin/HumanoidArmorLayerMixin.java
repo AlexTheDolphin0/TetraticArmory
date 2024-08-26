@@ -1,7 +1,9 @@
 package net.alexthedolphin0.tetraticarmory.mixin;
 
 import com.google.common.collect.ImmutableList;
+import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.*;
+import net.alexthedolphin0.tetraticarmory.client.ModularArmorModel;
 import net.alexthedolphin0.tetraticarmory.modular.ItemModularArmor;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.Model;
@@ -31,37 +33,23 @@ import java.util.Comparator;
 public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends HumanoidModel<T>, A extends HumanoidModel<T>> extends RenderLayer<T, M> {
     @Shadow public abstract void renderGlint(PoseStack p_289673_, MultiBufferSource p_289654_, int p_289649_, A p_289659_);
 
+    @Shadow public abstract void setPartVisibility(A p_117126_, EquipmentSlot p_117127_);
+
     public HumanoidArmorLayerMixin(RenderLayerParent<T, M> p_117346_) {
         super(p_117346_);
     }
     HumanoidArmorLayer thisnt = ((HumanoidArmorLayer)(Object)this);
-    @Inject(method = "renderArmorPiece", at = @At("HEAD"), cancellable = true)
-    private void iCanLiterallyNameThisMethodAnythingLMAO(PoseStack p_117119_, MultiBufferSource p_117120_, T p_117121_, EquipmentSlot p_117122_, int p_117123_, A p_117124_, CallbackInfo ci) {
-        if (p_117121_.getItemBySlot(p_117122_).getItem() instanceof ItemModularArmor armoritem) {
-            ItemStack itemstack = p_117121_.getItemBySlot(p_117122_);
-            if (armoritem.getEquipmentSlot() == p_117122_) {
-                this.getParentModel().copyPropertiesTo(p_117124_);
-                net.minecraft.client.model.Model model = net.minecraftforge.client.ForgeHooksClient.getArmorModel(p_117121_, itemstack, p_117122_, p_117124_);
-                boolean flag = thisnt.usesInnerModel(p_117122_);
-                renderModel(p_117119_, p_117120_, p_117123_, itemstack, model, flag);
-                /*ArmorTrim.getTrim(p_117121_.level().registryAccess(), itemstack).ifPresent((p_289638_) -> {
-                    thisnt.renderTrim(armoritem.getMaterial(), p_117119_, p_117120_, p_117123_, p_289638_, model, flag);
-                });*/
-                if (itemstack.hasFoil()) {
-                    model.renderToBuffer(p_117119_, p_117120_.getBuffer(RenderType.armorEntityGlint()), p_117123_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-                }
+    @Inject(method = "renderArmorPiece", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/armortrim/ArmorTrim;getTrim(Lnet/minecraft/core/RegistryAccess;Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional;"))
+    private void iCanLiterallyNameThisMethodAnythingLMAO(PoseStack p_117119_, MultiBufferSource p_117120_, T p_117121_, EquipmentSlot p_117122_, int p_117123_, A p_117124_, CallbackInfo ci, @Local ItemStack itemStack, @Local Model model, @Local boolean flag) {
+        if (itemStack.getItem() instanceof ItemModularArmor) {
+            ResourceLocation resourceLocation;
+            ImmutableList<ModuleModel> models = ((ItemModularArmor) itemStack.getItem()).getModels(itemStack, null);
+            ModuleModel[] modelArray = models.toArray(new ModuleModel[0]);
+            Arrays.sort(modelArray, Comparator.comparing((ModuleModel o) -> o.renderLayer));
+            for (ModuleModel moduleModel : modelArray) {
+                float[] tintRgb = tetraticArmory$rgb(moduleModel.tint);
+                renderModel(p_117119_, p_117120_, p_117123_, model, flag, tintRgb[0], tintRgb[1], tintRgb[2], 1.0F, moduleModel.location.withSuffix(".png").withPrefix("textures/models/"));
             }
-            ci.cancel();
-        }
-    }
-    public void renderModel(PoseStack poseStack, MultiBufferSource buffer, int i, ItemStack stack, Model model, boolean bool) {
-        ResourceLocation resourceLocation;
-        ImmutableList<ModuleModel> models = ((ItemModularArmor)stack.getItem()).getModels(stack, null);
-        ModuleModel[] modelArray = models.toArray(new ModuleModel[0]);
-        Arrays.sort(modelArray, Comparator.comparing((ModuleModel o) -> o.renderLayer));
-        for (ModuleModel moduleModel : modelArray) {
-            float[] tintRgb = tetraticArmory$rgb(moduleModel.tint);
-            renderModel(poseStack, buffer, i, model, bool, tintRgb[0], tintRgb[1], tintRgb[2], 1.0F, moduleModel.location.withSuffix(".png").withPrefix("textures/model/"));
         }
     }
     public void renderModel(PoseStack p_289664_, MultiBufferSource p_289689_, int p_289681_, Model p_289658_, boolean p_289668_, float red, float green, float blue, float alpha, ResourceLocation armorResource) {

@@ -8,6 +8,11 @@
   "tetra.slot.chestplate/arm_left": "Left Arm",
   "tetra.slot.chestplate/arm_right": "Right Arm",
   "tetra.slot.chestplate/back": "Back",
+  "tetra.slot.leggings/tasset": "Tasset",
+  "tetra.slot.leggings/leg_left": "Left Leg",
+  "tetra.slot.leggings/leg_right": "Right Leg",
+  "tetra.slot.leggings/knee_left": "Left Knee",
+  "tetra.slot.leggings/knee_right": "Right Knee",
 
   "tetra/schematic/helmet/basic_skull.name": "Simple skull",
   "tetra/schematic/helmet/basic_skull.description": "Replaces the current skull with a new one crafted from the provided material.",
@@ -54,5 +59,22 @@
   "tetra.module.chestplate/pauldron_left.description": "A simple pauldron. Increases protection and durability.",
   "tetra.module.chestplate/pauldron_right.description": "A simple pauldron. Increases protection and durability.",
   "tetra.module.chestplate/pauldron_left.material_name": "%s left pauldron",
-  "tetra.module.chestplate/pauldron_right.material_name": "%s right pauldron"
+  "tetra.module.chestplate/pauldron_right.material_name": "%s right pauldron",
+
+
+  "tetra/schematic/leggings/basic_tasset.name": "Simple tasset",
+  "tetra/schematic/leggings/basic_tasset.description": "Replaces the current tasset with a new one crafted from the provided material.",
+  "tetra/schematic/leggings/basic_tasset.slot1": "Tasset material",
+  "tetra.module.leggings/basic_tasset.name": "Simple Tasset",
+  "tetra.module.leggings/basic_tasset.description": "A simple tasset. Increases protection and durability.",
+  "tetra.module.leggings/basic_tasset.material_name": "%s Tasset",
+
+  "tetra/schematic/leggings/basic_leg.name": "Simple leg",
+  "tetra/schematic/leggings/basic_leg.description": "Replaces the current leg with a new one crafted from the provided material.",
+  "tetra/schematic/leggings/basic_leg.slot1": "Leg material",
+  "tetra.module.leggings/basic_leg.name": "Simple leg",
+  "tetra.module.leggings/basic_leg.description": "A simple leg. Increases protection and durability.",
+  "tetra.module.leggings/basic_leg.material_name": "%s leg",
+  "tetra.module.leggings/basic_leg.prefix":"%s",
+  "tetra.module.leggings/basic_leg.item_name":"Leggings"
 }
