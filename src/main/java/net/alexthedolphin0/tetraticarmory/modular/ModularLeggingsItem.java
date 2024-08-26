@@ -43,7 +43,6 @@ public class ModularLeggingsItem extends ItemModularArmor {
         this.minorModuleKeys = new String[]{"leggings/knee_left", "leggings/knee_right", "leggings/tasset"};
         this.requiredModules = new String[]{"leggings/tasset"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_leggings"));
-        RemoveSchematic.registerRemoveSchematics(this, "modular_leggings");
     }
 
     @Override

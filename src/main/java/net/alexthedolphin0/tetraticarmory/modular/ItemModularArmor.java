@@ -116,27 +116,27 @@ public abstract class ItemModularArmor extends ArmorItem implements IClientItemE
     public EquipmentSlot getEquipmentSlot() {
         return this.type.getSlot();
     }
-    public String[] getMajorModuleKeys() {
+    public String[] getMajorModuleKeys(ItemStack itemStack) {
         return this.majorModuleKeys;
     }
 
-    public String[] getMinorModuleKeys() {
+    public String[] getMinorModuleKeys(ItemStack itemStack) {
         return this.minorModuleKeys;
     }
 
-    public String[] getRequiredModules() {
+    public String[] getRequiredModules(ItemStack itemStack) {
         return this.requiredModules;
     }
 
-    public int getHoneBase() {
+    public int getHoneBase(ItemStack itemStack) {
         return this.honeBase;
     }
 
-    public int getHoneIntegrityMultiplier() {
+    public int getHoneIntegrityMultiplier(ItemStack itemStack) {
         return this.honeIntegrityMultiplier;
     }
 
-    public boolean canGainHoneProgress() {
+    public boolean canGainHoneProgress(ItemStack itemStack) {
         return this.canHone;
     }
 

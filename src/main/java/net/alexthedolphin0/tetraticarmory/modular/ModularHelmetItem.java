@@ -49,7 +49,6 @@ public class ModularHelmetItem extends ItemModularArmor {
         this.minorModuleKeys = new String[]{"helmet/headpiece", "helmet/face", "helmet/gorget"};
         this.requiredModules = new String[]{"helmet/skull"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_helmet"));
-        RemoveSchematic.registerRemoveSchematics(this, "modular_helmet");
     }
 
     @Override

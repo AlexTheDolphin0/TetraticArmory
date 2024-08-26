@@ -42,7 +42,6 @@ public class ModularBootsItem extends ItemModularArmor {
         this.minorModuleKeys = new String[]{"boots/sole_left", "boots/sole_right"};
         this.requiredModules = new String[]{"boots/boot_left", "boots/boot_right"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_boots"));
-        RemoveSchematic.registerRemoveSchematics(this, "modular_boots");
     }
 
     @Override

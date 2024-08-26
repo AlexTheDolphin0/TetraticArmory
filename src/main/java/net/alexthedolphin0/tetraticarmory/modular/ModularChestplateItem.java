@@ -43,7 +43,6 @@ public class ModularChestplateItem extends ItemModularArmor {
         this.minorModuleKeys = new String[]{"chestplate/arm_left", "chestplate/arm_right","chestplate/back"};
         this.requiredModules = new String[]{"chestplate/breastplate"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_chestplate"));
-        RemoveSchematic.registerRemoveSchematics(this, "modular_chestplate");
     }
 
     @Override
