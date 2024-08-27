@@ -13,6 +13,10 @@
   "tetra.slot.leggings/leg_right": "Right Leg",
   "tetra.slot.leggings/knee_left": "Left Knee",
   "tetra.slot.leggings/knee_right": "Right Knee",
+  "tetra.slot.boots/foot_left": "Left Foot",
+  "tetra.slot.boots/foot_right": "Right Foot",
+  "tetra.slot.boots/sole_left": "Left Sole",
+  "tetra.slot.boots/sole_right": "Right Sole",
 
   "tetra/schematic/helmet/basic_skull.name": "Simple skull",
   "tetra/schematic/helmet/basic_skull.description": "Replaces the current skull with a new one crafted from the provided material.",
@@ -76,5 +80,14 @@
   "tetra.module.leggings/basic_leg.description": "A simple leg. Increases protection and durability.",
   "tetra.module.leggings/basic_leg.material_name": "%s leg",
   "tetra.module.leggings/basic_leg.prefix":"%s",
-  "tetra.module.leggings/basic_leg.item_name":"Leggings"
+  "tetra.module.leggings/basic_leg.item_name":"Leggings",
+
+  "tetra/schematic/boots/basic_foot.name": "Simple boot",
+  "tetra/schematic/boots/basic_foot.description": "Replaces the current boot with a new one crafted from the provided material.",
+  "tetra/schematic/boots/basic_foot.slot1": "Boot material",
+  "tetra.module.boots/basic_foot.name": "Simple boot",
+  "tetra.module.boots/basic_foot.description": "A simple boot. Increases protection and durability.",
+  "tetra.module.boots/basic_foot.material_name": "%s boot",
+  "tetra.module.boots/basic_foot.prefix":"%s",
+  "tetra.module.boots/basic_foot.item_name":"Boots"
 }

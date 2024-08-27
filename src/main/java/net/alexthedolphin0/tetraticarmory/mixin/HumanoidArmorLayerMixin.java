@@ -48,7 +48,7 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
             Arrays.sort(modelArray, Comparator.comparing((ModuleModel o) -> o.renderLayer));
             for (ModuleModel moduleModel : modelArray) {
                 float[] tintRgb = tetraticArmory$rgb(moduleModel.tint);
-                renderModel(p_117119_, p_117120_, p_117123_, model, flag, tintRgb[0], tintRgb[1], tintRgb[2], 1.0F, moduleModel.location.withSuffix(".png").withPrefix("textures/models/"));
+                renderModel(p_117119_, p_117120_, p_117123_, model, flag, tintRgb[0], tintRgb[1], tintRgb[2], 1.0F, moduleModel.location.withSuffix(".png").withPrefix("textures/models/armor/"));
             }
         }
     }

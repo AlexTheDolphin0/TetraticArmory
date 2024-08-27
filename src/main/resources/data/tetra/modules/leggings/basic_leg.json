@@ -9,7 +9,7 @@
     "_left",
     "_right"
   ],
-  "renderLayer": "BASE",
+  "renderLayer": "HIGH",
   "improvements": [
     "tetra:leggings/basic_leg/",
     "tetra:leggings/shared_leg/",

@@ -25,8 +25,8 @@ import java.util.function.Consumer;
 
 @ParametersAreNonnullByDefault
 public class ModularBootsItem extends ItemModularArmor {
-    public static final String bootLeftKey = "boots/boot_left";
-    public static final String bootRightKey = "boots/boot_right";
+    public static final String footLeftKey = "boots/foot_left";
+    public static final String footRightKey = "boots/foot_right";
     public static final String liningKey = "boots/lining";
     public static final String soleLeftKey = "boots/sole_left";
     public static final String soleRightKey = "boots/sole_right";
@@ -38,9 +38,9 @@ public class ModularBootsItem extends ItemModularArmor {
     public static ItemModularArmor instance;
     public ModularBootsItem() {
         super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.BOOTS);
-        this.majorModuleKeys = new String[]{"boots/boot_left", "boots/boot_right"};
+        this.majorModuleKeys = new String[]{"boots/foot_left", "boots/foot_right"};
         this.minorModuleKeys = new String[]{"boots/sole_left", "boots/sole_right"};
-        this.requiredModules = new String[]{"boots/boot_left", "boots/boot_right"};
+        this.requiredModules = new String[]{"boots/foot_left", "boots/foot_right"};
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_boots"));
     }
 
@@ -57,10 +57,10 @@ public class ModularBootsItem extends ItemModularArmor {
         this.honeBase = honeBase;
         this.honeIntegrityMultiplier = honeIntegrityMultiplier;
     }
-    public static ItemStack createItemStack(String bootLeft, String bootLeftMaterial, String bootRight, String bootRightMaterial) {
+    public static ItemStack createItemStack(String footLeft, String footLeftMaterial, String footRight, String footRightMaterial) {
         ItemStack itemStack = new ItemStack(instance);
-        IModularItem.putModuleInSlot(itemStack, "boots/boot_left", "boots/" + bootLeft, "boots/" + bootLeft + "_material", bootLeft + "/" + bootLeftMaterial);
-        IModularItem.putModuleInSlot(itemStack, "boots/boot_right", "boots/" + bootRight, "boots/" + bootRight + "_material", bootRight + "/" + bootRightMaterial);
+        IModularItem.putModuleInSlot(itemStack, "boots/foot_left", "boots/" + footLeft, "boots/" + footLeft + "_material", footLeft + "/" + footLeftMaterial);
+        IModularItem.putModuleInSlot(itemStack, "boots/foot_right", "boots/" + footRight, "boots/" + footRight + "_material", footRight + "/" + footRightMaterial);
         IModularItem.updateIdentifier(itemStack);
         return itemStack;
     }
