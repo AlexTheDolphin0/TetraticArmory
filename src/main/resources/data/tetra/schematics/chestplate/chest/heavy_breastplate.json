@@ -1,10 +1,10 @@
 {
   "replace": true,
   "slots": [
-    "chestplate/arm_left"
+    "chestplate/chest"
   ],
   "materialSlotCount": 1,
-  "displayType": "minor",
+  "displayType": "major",
   "translation": {
     "primaryAttributes": {
       "generic.armor": 6
@@ -14,8 +14,8 @@
     "magicCapacity": 3
   },
   "glyph": {
-    "textureX": 0,
-    "textureY": 16,
+    "textureX": 48,
+    "textureY": 0,
     "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
     "tint": "ffffff"
   },
@@ -27,9 +27,9 @@
         "tetra:metal/",
         "tetra:gem/"
       ],
-      "countFactor": 1,
-      "moduleKey": "chestplate/pauldron_left",
-      "moduleVariant": "pauldron_left/"
+      "countFactor": 10,
+      "moduleKey": "chestplate/chest/heavy_breastplate",
+      "moduleVariant": "heavy_breastplate/"
     }
   ]
 }

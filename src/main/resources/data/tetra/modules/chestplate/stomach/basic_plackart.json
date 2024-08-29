@@ -1,0 +1,57 @@
+{
+  "replace": true,
+  "slots": [
+    "chestplate/stomach"
+  ],
+  "type": "tetra:basic_major_module",
+  "renderLayer": "BASE",
+  "improvements": [
+    "tetra:chestplate/basic_plackart/",
+    "tetra:chestplate/shared_stomach/",
+    "tetra:chestplate/shared/",
+    "tetra:shared/"
+  ],
+  "variants": [
+    {
+      "materials": [
+        "tetra:skin/",
+        "tetra:metal/",
+        "tetra:gem/",
+        "tetra:scale/"
+      ],
+      "key": "basic_plackart/",
+      "tags": [
+        "forge:chestplates"
+      ],
+      "attributes": {
+        "generic.armor": 1.2
+      },
+      "extract": {
+        "primaryAttributes": {
+          "generic.armor": 0.25
+        },
+        "generic.armor": 4,
+        "durability": 0.67,
+        "integrity": 1,
+        "magicCapacity": 1,
+        "glyph": {
+          "textureX": 64,
+          "textureY": 0,
+          "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
+          "tint": "ffffff"
+        },
+        "availableTextures": [
+          "metal",
+          "shiny",
+          "grainy",
+          "scaly"
+        ],
+        "models": [
+          {
+            "location": "tetra:item/module/chestplate/stomach/plackart/basic/"
+          }
+        ]
+      }
+    }
+  ]
+}

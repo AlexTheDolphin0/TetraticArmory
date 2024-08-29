@@ -1,11 +1,18 @@
 {
-  "replace": false,
-  "slots": ["chestplate/arm_left"],
-  "type": "tetra:basic_module",
+  "replace": true,
+  "type": "tetra:multi_major_module",
+  "slots": [
+    "chestplate/arm_left",
+    "chestplate/arm_right"
+  ],
+  "slotSuffixes": [
+    "_left",
+    "_right"
+  ],
   "renderLayer": "HIGH",
   "improvements": [
-    "tetra:chestplate/pauldron/",
-    "tetra:chestplate/arm/",
+    "tetra:chestplate/basic_pauldron/",
+    "tetra:chestplate/shared_arm/",
     "tetra:chestplate/shared/",
     "tetra:shared/"
   ],
@@ -17,7 +24,7 @@
         "tetra:gem/",
         "tetra:scale/"
       ],
-      "key": "pauldron_left/",
+      "key": "basic_pauldron/",
       "tags": [
         "forge:chestplates"
       ],
@@ -33,8 +40,8 @@
         "integrity": 1,
         "magicCapacity": 1,
         "glyph": {
-          "textureX": 0,
-          "textureY": 16,
+          "textureX": 96,
+          "textureY": 0,
           "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
           "tint": "ffffff"
         },
@@ -46,7 +53,7 @@
         ],
         "models": [
           {
-            "location": "tetra:item/module/chestplate/arm_left/pauldron/"
+            "location": "tetra:item/module/chestplate/arm/pauldron/basic/"
           }
         ]
       }

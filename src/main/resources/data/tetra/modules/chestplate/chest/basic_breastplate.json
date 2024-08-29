@@ -1,13 +1,13 @@
 {
   "replace": true,
   "slots": [
-    "chestplate/breastplate"
+    "chestplate/chest"
   ],
   "type": "tetra:basic_major_module",
   "renderLayer": "BASE",
   "improvements": [
     "tetra:chestplate/basic_breastplate/",
-    "tetra:chestplate/shared_breastplate/",
+    "tetra:chestplate/shared_chest/",
     "tetra:chestplate/shared/",
     "tetra:shared/"
   ],
@@ -48,7 +48,7 @@
         ],
         "models": [
           {
-            "location": "tetra:item/module/chestplate/breastplate/basic/"
+            "location": "tetra:item/module/chestplate/chest/breastplate/basic/"
           }
         ]
       }

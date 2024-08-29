@@ -1,7 +1,7 @@
 {
   "replace": true,
   "slots": [
-    "chestplate/breastplate"
+    "chestplate/stomach"
   ],
   "materialSlotCount": 1,
   "displayType": "major",
@@ -14,7 +14,7 @@
     "magicCapacity": 3
   },
   "glyph": {
-    "textureX": 32,
+    "textureX": 80,
     "textureY": 0,
     "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
     "tint": "ffffff"
@@ -27,9 +27,9 @@
         "tetra:metal/",
         "tetra:gem/"
       ],
-      "countFactor": 6,
-      "moduleKey": "chestplate/basic_breastplate",
-      "moduleVariant": "basic_breastplate/"
+      "countFactor": 10,
+      "moduleKey": "chestplate/stomach/heavy_plackart",
+      "moduleVariant": "heavy_plackart/"
     }
   ]
 }

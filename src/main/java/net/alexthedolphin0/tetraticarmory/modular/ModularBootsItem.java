@@ -10,11 +10,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ObjectHolder;
 import org.jetbrains.annotations.NotNull;
 import se.mickelus.mutil.network.PacketHandler;
 import se.mickelus.tetra.data.DataManager;
+import se.mickelus.tetra.gui.GuiModuleOffsets;
 import se.mickelus.tetra.items.modular.IModularItem;
 import se.mickelus.tetra.module.SchematicRegistry;
 import se.mickelus.tetra.module.schematic.RemoveSchematic;
@@ -27,10 +30,13 @@ import java.util.function.Consumer;
 public class ModularBootsItem extends ItemModularArmor {
     public static final String footLeftKey = "boots/foot_left";
     public static final String footRightKey = "boots/foot_right";
-    public static final String liningKey = "boots/lining";
     public static final String soleLeftKey = "boots/sole_left";
     public static final String soleRightKey = "boots/sole_right";
+    public static final String heelLeftKey = "boots/heel_left";
+    public static final String heelRightKey = "boots/heel_right";
     public static final String identifier = "modular_boots";
+    private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{-11, -4, 1, -4, -11, 23, 1, 23});
+    private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{-24, 12, 15, 12});
     @ObjectHolder(
             registryName = "item",
             value = "tetra:modular_boots"
@@ -38,10 +44,10 @@ public class ModularBootsItem extends ItemModularArmor {
     public static ItemModularArmor instance;
     public ModularBootsItem() {
         super((new Item.Properties()).stacksTo(1).fireResistant(), ArmorItem.Type.BOOTS);
-        this.majorModuleKeys = new String[]{"boots/foot_left", "boots/foot_right"};
-        this.minorModuleKeys = new String[]{"boots/sole_left", "boots/sole_right"};
-        this.requiredModules = new String[]{"boots/foot_left", "boots/foot_right"};
-        SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, "modular_boots"));
+        this.majorModuleKeys = new String[]{footLeftKey, footRightKey, soleLeftKey, soleRightKey};
+        this.minorModuleKeys = new String[]{heelLeftKey, heelRightKey};
+        this.requiredModules = new String[]{footLeftKey, footRightKey};
+        SchematicRegistry.instance.registerSchematic(new RepairSchematic(this, identifier));
     }
 
     @Override
@@ -59,8 +65,8 @@ public class ModularBootsItem extends ItemModularArmor {
     }
     public static ItemStack createItemStack(String footLeft, String footLeftMaterial, String footRight, String footRightMaterial) {
         ItemStack itemStack = new ItemStack(instance);
-        IModularItem.putModuleInSlot(itemStack, "boots/foot_left", "boots/" + footLeft, "boots/" + footLeft + "_material", footLeft + "/" + footLeftMaterial);
-        IModularItem.putModuleInSlot(itemStack, "boots/foot_right", "boots/" + footRight, "boots/" + footRight + "_material", footRight + "/" + footRightMaterial);
+        IModularItem.putModuleInSlot(itemStack, footLeftKey, "boots/" + footLeft, "boots/" + footLeft + "_material", footLeft + "/" + footLeftMaterial);
+        IModularItem.putModuleInSlot(itemStack, footRightKey, "boots/" + footRight, "boots/" + footRight + "_material", footRight + "/" + footRightMaterial);
         IModularItem.updateIdentifier(itemStack);
         return itemStack;
     }
@@ -75,5 +81,15 @@ public class ModularBootsItem extends ItemModularArmor {
                 return model;
             }
         });
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public GuiModuleOffsets getMajorGuiOffsets(ItemStack itemStack) {
+        return majorOffsets;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public GuiModuleOffsets getMinorGuiOffsets(ItemStack itemStack) {
+        return minorOffsets;
     }
 }

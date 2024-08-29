@@ -1,13 +1,13 @@
 {
   "replace": true,
   "slots": [
-    "chestplate/breastplate"
+    "chestplate/stomach"
   ],
   "type": "tetra:basic_major_module",
   "renderLayer": "BASE",
   "improvements": [
-    "tetra:chestplate/heavy_breastplate/",
-    "tetra:chestplate/shared_breastplate/",
+    "tetra:chestplate/heavy_plackart/",
+    "tetra:chestplate/shared_stomach/",
     "tetra:chestplate/shared/",
     "tetra:shared/"
   ],
@@ -19,7 +19,7 @@
         "tetra:gem/",
         "tetra:scale/"
       ],
-      "key": "heavy_breastplate/",
+      "key": "heavy_plackart/",
       "tags": [
         "forge:chestplates"
       ],
@@ -35,7 +35,7 @@
         "integrity": 1,
         "magicCapacity": 1,
         "glyph": {
-          "textureX": 32,
+          "textureX": 80,
           "textureY": 0,
           "textureLocation": "tetratic_armory:textures/gui/glyphs.png",
           "tint": "ffffff"
@@ -48,7 +48,7 @@
         ],
         "models": [
           {
-            "location": "tetra:item/module/chestplate/breastplate/heavy/"
+            "location": "tetra:item/module/chestplate/stomach/plackart/heavy/"
           }
         ]
       }
